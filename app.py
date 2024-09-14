@@ -70,6 +70,3 @@ def thank():
     collection.insert_one({'email':request.form.get('email')})
     return render_template('thankyou.html')
 
-if __name__ == '__main__':
-
-    app.run(debug=True,host='0.0.0.0')
