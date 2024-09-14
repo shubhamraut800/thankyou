@@ -65,8 +65,8 @@ collection = db['techasi']
 @app.route('/')
 def home():
     return render_template('index.html')
-@app.route('/thankyou',methods=["GET", "POST"])
-def thank():
-    collection.insert_one({'email':request.form.get('email')})
+@app.route('/thankyou/<email>',methods=["GET", "POST"])
+def thank(email):
+    collection.insert_one({'email':email})
     return render_template('thankyou.html')
 
